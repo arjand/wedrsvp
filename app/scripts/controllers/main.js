@@ -8,6 +8,12 @@ angular.module('wedrsvpApp')
       'Karma'
     ];
     var ref = new Firebase("https://kajan.firebaseIO.com/");
-        $scope.messages = [];
-        angularFire(ref, $scope, "messages");
+        $scope.rsvp = [];
+        angularFire(ref, $scope, "rsvp");
+
+        $scope.addRsvp = function(e, attending) {
+          $scope.rsvp.push({from: $scope.name, attending: attending});
+          	
+        }
+
   });
